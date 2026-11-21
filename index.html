@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenPrintHQ: run a 3D print farm as a product business</title>
+<meta name="description" content="OpenPrintHQ is self-hosted software that runs a 3D print farm as a product business: every model as a product, the print farm, filament and parts, and the storefront in one place. The hub is open source under AGPL-3.0.">
+<meta name="theme-color" content="#172028">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root {
+    --bg: #172028; --bg-mid: #1d2a34; --bg-top: #273642;
+    --glass: rgba(255,255,255,.06); --line: rgba(255,255,255,.12);
+    --text: #eef4f8; --text-2: #b9c7d2; --text-3: #8fa2b1;
+    --accent: #8fd3ff; --on-accent: #1d2a34; --attention: #ffb38a;
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: dark; }
+  body {
+    margin: 0; color: var(--text); background: var(--bg);
+    background-image: radial-gradient(ellipse at 70% -10%, #3f566a 0%, var(--bg-top) 30%, var(--bg-mid) 55%, var(--bg) 85%);
+    background-attachment: fixed;
+    font: 16px/1.6 Manrope, "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  header.top { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; gap: 16px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 12px; color: var(--text); font: 700 20px/1 Sora, Manrope, system-ui, sans-serif; }
+  .brand:hover { text-decoration: none; }
+  .tile { width: 40px; height: 40px; border-radius: 11px; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; flex: none; }
+  nav.links { display: flex; gap: 22px; flex-wrap: wrap; }
+  nav.links a { color: var(--text-2); font-weight: 600; }
+  .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; padding: 56px 0 64px; }
+  h1 { font: 700 clamp(34px, 4.6vw, 54px)/1.08 Sora, Manrope, system-ui, sans-serif; margin: 0 0 18px; letter-spacing: -.01em; }
+  h2 { font: 700 28px/1.2 Sora, Manrope, system-ui, sans-serif; margin: 0 0 8px; }
+  h3 { font: 700 18px/1.3 Sora, Manrope, system-ui, sans-serif; margin: 0 0 6px; }
+  .lead { color: var(--text-2); font-size: 19px; margin: 0 0 28px; max-width: 34em; }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 12px; font-weight: 700; border: 1px solid var(--line); color: var(--text); background: var(--glass); }
+  .btn:hover { text-decoration: none; border-color: var(--accent); }
+  .btn.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+  .card { background: var(--glass); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .mark-big { display: grid; place-items: center; aspect-ratio: 1; max-width: 360px; width: 100%; margin-left: auto; }
+  section { padding: 40px 0; }
+  .sub { color: var(--text-2); margin: 0 0 24px; max-width: 46em; }
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+  .grid.two { grid-template-columns: repeat(2, 1fr); }
+  .card p { margin: 0; color: var(--text-2); }
+  .chip { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text-3); margin-bottom: 10px; }
+  .chip.open { color: var(--accent); }
+  .chip.paid { color: var(--attention); }
+  ul.plain { margin: 0; padding-left: 18px; color: var(--text-2); }
+  ul.plain li { margin: 4px 0; }
+  footer { border-top: 1px solid var(--line); margin-top: 32px; padding: 28px 0 40px; color: var(--text-3); font-size: 14px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; padding-top: 24px; }
+    .mark-big { max-width: 220px; margin: 0; }
+    .grid, .grid.two { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/" aria-label="OpenPrintHQ home">
+      <span class="tile" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 20.5 7.3v9.4L12 21.5l-8.5-4.8V7.3z"/><path d="M8 16h8M9.5 12.8h5M11 9.6h2"/></svg></span>
+      OpenPrintHQ
+    </a>
+    <nav class="links" aria-label="Site">
+      <a href="#what">What it does</a>
+      <a href="#parts">The parts</a>
+      <a href="#source">Source</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>Run a 3D print farm as a product business.</h1>
+        <p class="lead">OpenPrintHQ manages every model as a product: photos, print settings, files, colour options, bill of materials, store listing and supply levels. The print farm, the model library, filament, parts and your storefront are all driven from one place, on your own hardware.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/norjms/openprinthq">Get the hub on GitHub</a>
+          <a class="btn" href="#parts">See the parts</a>
+        </div>
+      </div>
+      <div class="mark-big card" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="70%" fill="none"><path d="M32 10 L50 20 V44 L32 54 L14 44 V20 Z" stroke="#8fd3ff" stroke-width="2.5" stroke-linejoin="round"/><rect x="22" y="38" width="20" height="4" rx="1.5" fill="#ffb38a"/><rect x="24.5" y="31" width="15" height="4" rx="1.5" fill="#8fd3ff"/><rect x="27" y="24" width="10" height="4" rx="1.5" fill="#8fd3ff" opacity=".75"/></svg>
+      </div>
+    </div>
+
+    <section id="what">
+      <h2>What it does</h2>
+      <p class="sub">One hub in front of everything a print business runs on.</p>
+      <div class="grid">
+        <div class="card"><h3>Models as products</h3><p>Each model carries its photos, print settings, files, colour options and bill of materials, ready to list in your store.</p></div>
+        <div class="card"><h3>The print farm</h3><p>Queue, printers, cameras and maintenance for Bambu Lab, Prusa, Klipper and OctoPrint machines, with plate checks after every print.</p></div>
+        <div class="card"><h3>Filament and parts</h3><p>Spools and stock tracked as you print, so you know what is low before an order needs it.</p></div>
+        <div class="card"><h3>Your storefront</h3><p>Connects to WooCommerce: availability, instant quotes and orders flow between the store and the farm.</p></div>
+        <div class="card"><h3>Slice from OrcaSlicer</h3><p>OrcaSlicer in the browser comes connected, and the Print Queue add-on sends jobs from OrcaSlicer on your own computer.</p></div>
+        <div class="card"><h3>Printers anywhere</h3><p>OpenPrintHQ Link reaches printers on other networks by connecting out, so nothing at home is exposed.</p></div>
+      </div>
+    </section>
+
+    <section id="parts">
+      <h2>The parts</h2>
+      <p class="sub">The hub is open source. The installer and the apps around it are how the project is funded.</p>
+      <div class="grid two">
+        <div class="card"><span class="chip open">Open source, AGPL-3.0</span><h3>The hub and its farm</h3><ul class="plain"><li>The hub: web app, API and worker</li><li>The farm, served under the hub's own address</li><li>OpenPrintHQ Link for printers on other networks</li><li>The Print Queue add-on for OrcaSlicer</li></ul></div>
+        <div class="card"><span class="chip paid">Paid</span><h3>Around the hub</h3><ul class="plain"><li>OpenPrintHQ Installer: sets up, updates and backs up a full installation</li><li>OpenPrintHQ for iPhone and Android</li><li>OpenPrintHQ Clipper, to add models from the web</li></ul></div>
+      </div>
+    </section>
+
+    <section id="source">
+      <h2>Source</h2>
+      <p class="sub">Self-hosted on Linux with Docker. The code is on GitHub.</p>
+      <div class="grid">
+        <a class="card" href="https://github.com/norjms/openprinthq"><h3>openprinthq</h3><p>The hub.</p></a>
+        <a class="card" href="https://github.com/norjms/openprinthq-farm"><h3>openprinthq-farm</h3><p>The print farm.</p></a>
+        <a class="card" href="https://github.com/norjms/openprinthq-link"><h3>openprinthq-link</h3><p>Printers on other networks.</p></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>OpenPrintHQ. The hub is free software under the GNU AGPL-3.0.</span>
+    <span><a href="https://github.com/norjms/openprinthq">github.com/norjms/openprinthq</a></span>
+  </footer>
+</div>
+</body>
+</html>
