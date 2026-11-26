@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support: OpenPrintHQ</title>
+<meta name="description" content="Help with OpenPrintHQ: contact, reporting problems, connecting the app to your hub and common questions.">
+<meta name="theme-color" content="#172028">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://openprinthq.com/support">
+<style>
+  :root {
+    --bg: #172028; --bg-mid: #1d2a34; --bg-top: #273642;
+    --glass: rgba(255,255,255,.06); --line: rgba(255,255,255,.12);
+    --text: #eef4f8; --text-2: #b9c7d2; --text-3: #8fa2b1;
+    --accent: #8fd3ff; --on-accent: #1d2a34; --attention: #ffb38a;
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: dark; }
+  body {
+    margin: 0; color: var(--text); background: var(--bg);
+    background-image: radial-gradient(ellipse at 70% -10%, #3f566a 0%, var(--bg-top) 30%, var(--bg-mid) 55%, var(--bg) 85%);
+    background-attachment: fixed;
+    font: 16px/1.6 Manrope, "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  header.top { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; gap: 16px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 12px; color: var(--text); font: 700 20px/1 Sora, Manrope, system-ui, sans-serif; }
+  .brand:hover { text-decoration: none; }
+  .tile { width: 40px; height: 40px; border-radius: 11px; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; flex: none; }
+  nav.links { display: flex; gap: 22px; flex-wrap: wrap; }
+  nav.links a { color: var(--text-2); font-weight: 600; }
+  .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; padding: 56px 0 64px; }
+  h1 { font: 700 clamp(34px, 4.6vw, 54px)/1.08 Sora, Manrope, system-ui, sans-serif; margin: 0 0 18px; letter-spacing: -.01em; }
+  h2 { font: 700 28px/1.2 Sora, Manrope, system-ui, sans-serif; margin: 0 0 8px; }
+  h3 { font: 700 18px/1.3 Sora, Manrope, system-ui, sans-serif; margin: 0 0 6px; }
+  .lead { color: var(--text-2); font-size: 19px; margin: 0 0 28px; max-width: 34em; }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 12px; font-weight: 700; border: 1px solid var(--line); color: var(--text); background: var(--glass); }
+  .btn:hover { text-decoration: none; border-color: var(--accent); }
+  .btn.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+  .card { background: var(--glass); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .mark-big { display: grid; place-items: center; aspect-ratio: 1; max-width: 360px; width: 100%; margin-left: auto; }
+  section { padding: 40px 0; }
+  .sub { color: var(--text-2); margin: 0 0 24px; max-width: 46em; }
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+  .grid.two { grid-template-columns: repeat(2, 1fr); }
+  .card p { margin: 0; color: var(--text-2); }
+  .chip { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text-3); margin-bottom: 10px; }
+  .chip.open { color: var(--accent); }
+  .chip.paid { color: var(--attention); }
+  ul.plain { margin: 0; padding-left: 18px; color: var(--text-2); }
+  ul.plain li { margin: 4px 0; }
+  footer { border-top: 1px solid var(--line); margin-top: 32px; padding: 28px 0 40px; color: var(--text-3); font-size: 14px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; padding-top: 24px; }
+    .mark-big { max-width: 220px; margin: 0; }
+    .grid, .grid.two { grid-template-columns: 1fr; }
+  }
+</style>
+<style>
+  .policy { max-width: 46em; padding: 24px 0 8px; }
+  .policy h1 { font-size: clamp(30px, 4vw, 42px); }
+  .policy h2 { margin-top: 36px; }
+  .policy p, .policy li { color: var(--text-2); }
+  .policy strong { color: var(--text); }
+  .policy ul, .policy ol { padding-left: 22px; }
+  .policy li { margin: 6px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/" aria-label="OpenPrintHQ home">
+      <span class="tile" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 20.5 7.3v9.4L12 21.5l-8.5-4.8V7.3z"/><path d="M8 16h8M9.5 12.8h5M11 9.6h2"/></svg></span>
+      OpenPrintHQ
+    </a>
+    <nav class="links" aria-label="Site">
+      <a href="/#what">What it does</a>
+      <a href="/#parts">The parts</a>
+      <a href="/#source">Source</a>
+    </nav>
+  </header>
+  <main class="policy">
+<h1>OpenPrintHQ Support</h1>
+<p>Help with the OpenPrintHQ apps for iPhone, iPad, Apple TV and Android, the installer and the hub.</p>
+<h2>Contact</h2>
+<p>Email <a href="mailto:norjms@gmail.com">norjms@gmail.com</a>. Say which app or part you are using, its version, and what you expected to happen. We answer within a few working days.</p>
+<h2>Report a problem or ask for a feature</h2>
+<p>Open an issue on GitHub: <a href="https://github.com/norjms/openprinthq/issues">github.com/norjms/openprinthq/issues</a>. Leave out passwords, keys and your hub's address.</p>
+<h2>Getting started with the app</h2>
+<ol>
+<li>The app needs an OpenPrintHQ hub, which you run on your own hardware. The hub is open source: <a href="https://github.com/norjms/openprinthq">github.com/norjms/openprinthq</a>.</li>
+<li>On your hub, open <strong>Connect a phone</strong>.</li>
+<li>In the app, scan the QR code it shows. You can add more than one hub.</li>
+</ol>
+<h2>Common questions</h2>
+<p><strong>The app cannot reach my hub.</strong> Check that the phone can open your hub's address in its web browser. On iPhone, allow Local Network for OpenPrintHQ in Settings if your hub is on your home or shop network.</p>
+<p><strong>I do not get notifications.</strong> Turn them on in the app, and check that your hub has phone notifications switched on under Farm, Settings, Phone app notifications.</p>
+<p><strong>Refunds.</strong> Purchases are made through the App Store or Google Play; ask Apple or Google for a refund.</p>
+<h2>Privacy</h2>
+<p>See the <a href="privacy">privacy policy</a>.</p>
+  </main>
+  <footer>
+    <span>OpenPrintHQ. The hub is free software under the GNU AGPL-3.0.</span>
+    <span><a href="/">Home</a> &middot; <a href="privacy">Privacy</a> &middot; <a href="https://github.com/norjms/openprinthq">github.com/norjms/openprinthq</a></span>
+  </footer>
+</div>
+</body>
+</html>
